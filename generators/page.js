@@ -11,23 +11,23 @@ module.exports = (plop) => {
         type: 'list',
         name: 'category',
         message: 'Qual a categoria?',
-        choices: ['public', 'private']
+        choices: ['public', 'private', 'error']
       }
     ],
     actions: [
       {
         type: 'add',
-        path: '../src/pages/{{lowerCase category}}/{{pascalCase name}}/index.jsx',
+        path: '../src/pages/{{lowerCase category}}Pages/{{pascalCase name}}/index.jsx',
         templateFile: 'templates/component.jsx.hbs'
       },
       {
         type: 'add',
-        path: '../src/pages/{{lowerCase category}}/{{pascalCase name}}/styles.js',
+        path: '../src/pages/{{lowerCase category}}Pages/{{pascalCase name}}/styles.js',
         templateFile: 'templates/styles.js.hbs'
       },
       {
         type: 'add',
-        path: '../src/pages/{{lowerCase category}}/{{pascalCase name}}/test.jsx',
+        path: '../src/pages/{{lowerCase category}}Pages/{{pascalCase name}}/test.jsx',
         templateFile: 'templates/test.jsx.hbs'
       }
     ]
