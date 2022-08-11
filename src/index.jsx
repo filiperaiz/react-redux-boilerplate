@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Helmet } from 'react-helmet'
 import { Provider } from 'react-redux'
 
-import { unRegisterServiceWorker } from 'config/initializer'
+import { unRegisterServiceWorker } from 'configs'
 import store from 'redux/store'
 
 import App from './App'
