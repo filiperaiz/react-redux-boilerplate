@@ -11,7 +11,7 @@ module.exports = (plop) => {
         type: 'list',
         name: 'category',
         message: 'Qual a categoria?',
-        choices: ['public', 'private', 'error']
+        choices: ['public', 'private']
       }
     ],
     actions: [
@@ -29,6 +29,13 @@ module.exports = (plop) => {
         type: 'add',
         path: '../src/pages/{{lowerCase category}}Pages/{{pascalCase name}}/test.jsx',
         templateFile: 'templates/test.jsx.hbs'
+      },
+      {
+        type: 'modify',
+        path: '../src/pages/{{lowerCase category}}Pages/index.js',
+        pattern: /(\/\/ LIST PAGES)/g,
+        template:
+          ",{{pascalCase name}}: lazy(() => import('./{{pascalCase name}}'))\n$1"
       }
     ]
   })
