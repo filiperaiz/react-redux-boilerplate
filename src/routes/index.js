@@ -1,3 +1,4 @@
+export { default as browserHistory } from './browserHistory'
 export { default as listRoutes } from './listRoutes'
 export { default as routes } from './routes'
 export { default as PrivateRoute } from './privateRoute'

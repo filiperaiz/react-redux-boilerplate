@@ -4,11 +4,10 @@ import { Router, Switch, Route, Redirect } from 'react-router-dom'
 import ErrorBoundary from 'components/ErrorBoundary'
 import ErrorFallback from 'components/ErrorFallback'
 import Error404 from 'pages/errorPages/404'
-import { listRoutes, PrivateRoute, PublicRoute } from 'routes'
-import { history } from 'utils'
+import { browserHistory, listRoutes, PrivateRoute, PublicRoute } from 'routes'
 
 const Routes = () => (
-  <Router history={history}>
+  <Router history={browserHistory}>
     <ErrorBoundary component={ErrorFallback}>
       <Suspense fallback={false}>
         <Switch>

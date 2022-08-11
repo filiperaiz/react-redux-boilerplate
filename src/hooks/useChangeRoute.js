@@ -1,8 +1,8 @@
-import { history } from 'utils'
+import { browserHistory } from 'routes'
 
 const useChangeRoute = (route) => {
   setTimeout(() => {
-    history.push(route)
+    browserHistory.push(route)
   }, 200)
 }
 
