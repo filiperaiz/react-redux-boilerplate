@@ -11,9 +11,7 @@ import { ThemeProvider } from 'styled-components'
 
 import { render } from '@testing-library/react'
 
-let initialState = {}
-
-export const renderWithReduxRouter = (children, { reduxState } = {}) => {
+export const renderWithRedux = (children, { reduxState } = {}) => {
   const action = jest.fn()
 
   const logActions = () => {
@@ -29,19 +27,19 @@ export const renderWithReduxRouter = (children, { reduxState } = {}) => {
     }
   }
 
-  const store = createStore(
-    reducer,
-    reduxState || initialState,
-    applyMiddleware(logActions)
-  )
-  const history = createMemoryHistory()
+  const initialState = reduxState || {}
 
-  const getMockAllNames = () => action.mock.results.map((obj) => obj.value.type)
+  const store = createStore(reducer, initialState, applyMiddleware(logActions))
 
-  const getMockAllValues = () =>
-    action.mock.results.map((obj) => obj.value.payload)
+  const browserHistory = createMemoryHistory()
 
-  const getMockValue = () => action.mock.results.slice(-1)[0]?.value.payload
+  const mockResults = action.mock.results
+
+  const getMockAllNames = () => mockResults.map((obj) => obj.value.type)
+
+  const getMockAllValues = () => mockResults.map((obj) => obj.value.payload)
+
+  const getMockValue = () => mockResults.slice(-1)[0]?.value.payload
 
   return {
     action: { ...action, getMockAllNames, getMockAllValues, getMockValue },
@@ -49,7 +47,7 @@ export const renderWithReduxRouter = (children, { reduxState } = {}) => {
     ...render(
       <Provider store={store}>
         <ThemeProvider theme={themeDefault}>
-          <Router history={history}>{children}</Router>
+          <Router history={browserHistory}>{children}</Router>
         </ThemeProvider>
       </Provider>
     )

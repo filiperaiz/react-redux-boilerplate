@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { renderWithReduxRouter } from 'utils/tests/helpers'
+import { renderWithRedux } from 'utils/tests/renderWithRedux'
 
 import { screen } from '@testing-library/react'
 
@@ -8,7 +8,7 @@ import {{pascalCase name}} from './index'
 
 describe('<{{pascalCase name}} />', () => {
   it('should render the heading', () => {
-    const { container } = renderWithReduxRouter(<{{pascalCase name}} />)
+    const { container } = renderWithRedux(<{{pascalCase name}} />)
 
     expect(screen.getByRole('heading', { name: /{{pascalCase name}}/i })).toBeInTheDocument()
 

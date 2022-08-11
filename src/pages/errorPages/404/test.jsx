@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { renderWithReduxRouter } from 'utils/tests/helpers'
+import { renderWithRedux } from 'utils/tests/renderWithRedux'
 
 import { screen } from '@testing-library/react'
 
@@ -8,7 +8,7 @@ import Error404 from './index'
 
 describe('<Error404Page />', () => {
   it('should render the heading', () => {
-    renderWithReduxRouter(<Error404 />)
+    renderWithRedux(<Error404 />)
 
     expect(
       screen.getByRole('heading', {

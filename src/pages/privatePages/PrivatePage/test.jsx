@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { renderWithReduxRouter } from 'utils/tests/helpers'
+import { renderWithRedux } from 'utils/tests/renderWithRedux'
 
 import { screen } from '@testing-library/react'
 
@@ -8,7 +8,7 @@ import PrivatePage from './index'
 
 describe('<PrivatePage />', () => {
   it('should render the heading', () => {
-    renderWithReduxRouter(<PrivatePage />)
+    renderWithRedux(<PrivatePage />)
 
     expect(
       screen.getByRole('heading', { name: /PrivatePage/i })

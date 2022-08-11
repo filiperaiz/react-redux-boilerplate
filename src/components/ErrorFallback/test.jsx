@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { renderWithReduxRouter } from 'utils/tests/helpers'
+import { renderWithRedux } from 'utils/tests/renderWithRedux'
 
 import { screen } from '@testing-library/react'
 
@@ -8,7 +8,7 @@ import ErrorFallback from './index'
 
 describe('<ErrorFallbackComponent />', () => {
   it('should render the heading', () => {
-    renderWithReduxRouter(<ErrorFallback />)
+    renderWithRedux(<ErrorFallback />)
 
     expect(
       screen.getByRole('heading', {

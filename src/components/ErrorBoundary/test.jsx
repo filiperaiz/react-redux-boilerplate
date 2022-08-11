@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { renderWithReduxRouter } from 'utils/tests/helpers'
+import { renderWithRedux } from 'utils/tests/renderWithRedux'
 
 import { screen } from '@testing-library/react'
 
@@ -8,7 +8,7 @@ import ErrorBoundary from './index'
 
 describe('<ErrorBoundaryComponent />', () => {
   it('should render the heading', () => {
-    renderWithReduxRouter(
+    renderWithRedux(
       <ErrorBoundary>
         <h1>Ops, algo deu errado!</h1>
       </ErrorBoundary>
