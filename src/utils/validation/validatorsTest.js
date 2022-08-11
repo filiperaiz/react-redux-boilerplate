@@ -2,6 +2,7 @@ import { isValid, differenceInYears } from 'date-fns'
 
 export const validatorsTests = {
   onlyText: (value) => /^[^\d]+$/.test(value),
+  notSpaceFirst: (value) => /^[^.\s]/.test(value),
   onlyNumber: (value) => /^[\d]+$/.test(value),
   firstName: (value) => {
     if (value) {
@@ -83,40 +84,6 @@ export const validatorsTests = {
     }
 
     if (mod !== parseInt(cpf.substring(10, 11), 0)) {
-      return false
-    }
-
-    return true
-  },
-  isValidMinDate: (value, minDate) => {
-    if (value === undefined) {
-      return true
-    }
-
-    const formattedValue = value.split('/').reverse().join('/')
-
-    const d1 = new Date(formattedValue)
-
-    const d2 = new Date(`${minDate.split('-').join('/')} 00:00:00`)
-
-    if (d1 < d2) {
-      return false
-    }
-
-    return true
-  },
-  isValidMaxDate: (value, maxDate) => {
-    if (value === undefined) {
-      return true
-    }
-
-    const formattedValue = value.split('/').reverse().join('/')
-
-    const d1 = new Date(formattedValue)
-
-    const d2 = maxDate
-
-    if (d1 > d2) {
       return false
     }
 

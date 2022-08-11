@@ -4,6 +4,8 @@ import {
   removeStorageItem
 } from 'utils/storage'
 
+import { getRequest } from './example'
+
 export function getDevEnv() {
   return process.env.REACT_APP_DEV === 'true' || false
 }
@@ -22,15 +24,15 @@ export function deleteToken() {
 
 export function isAuthenticated() {
   const response = getToken()
-  const isAuth = response !== undefined ? response.isValid : null
-  return process.env.REACT_APP_AUTH === 'true' || isAuth
+
+  return response?.isValid || false
 }
 
 export async function requestToken() {
   const storageToken = getToken()
 
   if (!storageToken) {
-    const token = await function fetchExample() {}
+    const token = await getRequest()
 
     setToken(token)
 
