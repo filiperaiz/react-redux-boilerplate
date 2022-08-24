@@ -2,12 +2,10 @@
   "name": "react-redux-boilerplate",
   "version": "1.0.0",
   "author": "Filipe Raiz",
-  "private": true,
+  "private": false,
   "scripts": {
     "start:local": "env-cmd -f .env.development.local craco start",
     "start:dev": "env-cmd -f .env.development craco start",
-    "start:qa": "env-cmd -f .env.qa craco start",
-    "start:sandbox": "env-cmd -f .env.staging craco start",
     "build": "react-scripts build",
     "lint": "eslint src --max-warnings=0",
     "test": "jest --maxWorkers=50%",
@@ -58,6 +56,7 @@
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-saga": "^1.1.3",
+    "roots-design-system": "^0.1.1",
     "styled-components": "^5.3.5",
     "yup": "^0.32.11"
   },

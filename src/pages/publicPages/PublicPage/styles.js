@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 export const Main = styled.main`
   ${({ theme }) => css`
     align-items: center;
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.primary[400]};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,14 +23,14 @@ export const Main = styled.main`
 
 export const Logo = styled.img`
   ${({ theme }) => css`
-    margin-bottom: ${theme.spacings.medium};
+    margin-bottom: ${theme.spacing.sm};
     width: 8rem;
   `}
 `
 
 export const Illustration = styled.img`
   ${({ theme }) => css`
-    margin-top: ${theme.spacings.small};
+    margin-top: ${theme.spacing.xs};
     width: min(25rem, 100%);
   `}
 `

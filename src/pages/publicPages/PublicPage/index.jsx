@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import PropTypes from 'prop-types'
 import { Actions as GenericsExample } from 'redux/ducks/example'
+import { Button } from 'roots-design-system'
 
 import ImgHero from './hero.png'
 import * as S from './styles'
@@ -31,7 +32,25 @@ const MainPage = ({ title }) => {
           alt="Um desenvolvedor de frente para um notebook."
         />
 
-        <button onClick={handleSubmit}>Submit</button>
+        <Button onClick={handleSubmit}>Submit Redux</Button>
+
+        <Button
+          as="a"
+          variant="secondary-outline"
+          target="_blank"
+          href="https://github.com/filiperaiz/react-redux-boilerplate"
+        >
+          Open Github Project
+        </Button>
+
+        <Button
+          as="a"
+          variant="secondary-outline"
+          target="_blank"
+          href="https://github.dev/filiperaiz/react-redux-boilerplate"
+        >
+          Open Github VSCODE online
+        </Button>
       </S.Main>
     </S.Wrapper>
   )
